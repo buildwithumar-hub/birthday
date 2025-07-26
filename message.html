@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You Message</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Sparkle effect background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: dropText 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            font-weight: 400;
+            animation: dropText 1s ease-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        strong {
+            font-weight: 500;
+            color: #ffe6e6;
+        }
+
+        .portraits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            animation: dropText 1s ease-out forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        .polaroid {
+            background: white;
+            color: #333;
+            border-radius: 10px;
+            width: 170px;
+            padding: 10px 10px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .polaroid img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-size: 15px;
+            font-style: italic;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        @keyframes dropText {
+            from {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>I'm so Thankful for You.</h2>
+
+    <p>
+        for making me smile,
+        for understanding me,
+        for standing with me in every situation.
+        I'm thankful that the Universe sent you
+        and I'm thankful that I found You!!
+        <strong>Happy birthday..to..you myy love myy wife myyy pandaaa myyy diyaa💖</strong>
+    </p>
+
+    <div class="portraits">
+        <div class="polaroid">
+            <img src="f7e796dd-23db-4cb5-adb4-9378f041ea8e_Original_Original.jpeg" alt="Portrait 1">
+            <div class="label">Beautiful You</div>
+        </div>
+        <div class="polaroid">
+            <img src="B1857B90-5180-43A4-B7BF-557ED9D7A911.png" alt="Portrait 2">
+            <div class="label">Sweet Moments</div>
+        </div>
+        <div class="polaroid">
+            <img src="IMG_5959.jpeg" alt="Portrait 3">
+            <div class="label">Forever Love</div>
+        </div>
+    </div>
+</body>
+
+</html>
