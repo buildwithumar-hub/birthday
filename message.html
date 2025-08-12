@@ -3,23 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You Message</title>
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 50px 20px;
+            padding: 0;
+        }
+        
+        body {
+            min-height: 100vh;
+            padding: 20px;
             background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
             font-family: 'Poppins', sans-serif;
             color: #fff;
-            text-align: center;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
+            overflow-x: hidden;
         }
 
         /* Sparkle effect background */
@@ -37,18 +45,21 @@
 
         h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 8vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
             animation: dropText 1s ease-out forwards;
             opacity: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         p {
-            font-size: 20px;
+            font-size: clamp(1rem, 4vw, 1.25rem);
             max-width: 700px;
-            margin: auto;
+            width: 90%;
+            margin: 0 auto 2rem;
             line-height: 1.8;
-            font-weight: 400;
+            text-align: center;
             animation: dropText 1s ease-out forwards;
             animation-delay: 0.5s;
             opacity: 0;
@@ -57,43 +68,54 @@
         strong {
             font-weight: 500;
             color: #ffe6e6;
+            display: block;
+            margin-top: 1rem;
+            font-size: clamp(1.1rem, 4.5vw, 1.4rem);
         }
 
         .portraits {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
+            gap: 1.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
             animation: dropText 1s ease-out forwards;
             animation-delay: 1s;
             opacity: 0;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 1rem;
         }
 
         .polaroid {
             background: white;
             color: #333;
             border-radius: 10px;
-            width: 170px;
-            padding: 10px 10px 20px;
+            width: clamp(150px, 30vw, 200px);
+            padding: 0.8rem 0.8rem 1.2rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .polaroid:hover {
             transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .polaroid img {
             width: 100%;
+            height: auto;
             border-radius: 6px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
         }
 
         .label {
-            margin-top: 10px;
-            font-size: 15px;
+            margin-top: 0.8rem;
+            font-size: clamp(0.9rem, 3vw, 1rem);
             font-style: italic;
             font-family: 'Dancing Script', cursive;
+            text-align: center;
         }
 
         @keyframes dropText {
@@ -101,10 +123,36 @@
                 transform: translateY(-40px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .portraits {
+                gap: 1rem;
+            }
+            
+            .polaroid {
+                width: 45%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 15px;
+            }
+            
+            .polaroid {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            p {
+                width: 95%;
             }
         }
     </style>
@@ -114,25 +162,25 @@
     <h2>I'm so Thankful for You.</h2>
 
     <p>
-        for making me smile,
-        for understanding me,
-        for standing with me in every situation.
-        I'm thankful that the Universe sent you
-        and I'm thankful that I found You!!
+        for making me smile,<br>
+        for understanding me,<br>
+        for standing with me in every situation.<br>
+        I'm thankful that the Universe sent you<br>
+        and I'm thankful that I found You!!<br>
         <strong>Happy birthday..to..you myy love myy wife myyy pandaaa myyy diyaa💖</strong>
     </p>
 
     <div class="portraits">
         <div class="polaroid">
-            <img src="f7e796dd-23db-4cb5-adb4-9378f041ea8e_Original_Original.jpeg" alt="Portrait 1">
+            <img src="f7e796dd-23db-4cb5-adb4-9378f041ea8e_Original_Original.jpeg" alt="Beautiful You">
             <div class="label">Beautiful You</div>
         </div>
         <div class="polaroid">
-            <img src="B1857B90-5180-43A4-B7BF-557ED9D7A911.png" alt="Portrait 2">
+            <img src="B1857B90-5180-43A4-B7BF-557ED9D7A911.png" alt="Sweet Moments">
             <div class="label">Sweet Moments</div>
         </div>
         <div class="polaroid">
-            <img src="IMG_5959.jpeg" alt="Portrait 3">
+            <img src="IMG_5959.jpeg" alt="Forever Love">
             <div class="label">Forever Love</div>
         </div>
     </div>
