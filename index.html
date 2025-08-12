@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday My Love!</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -29,11 +30,16 @@
       position: relative;
       min-height: 100vh;
       color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin-top: 2rem;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      margin-bottom: 1rem;
       text-shadow: 3px 3px 5px var(--shadow-color);
       animation: pulse 2s infinite alternate;
     }
@@ -44,20 +50,22 @@
     }
 
     .container {
-      margin-top: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 8vw, 3.5rem);
       font-weight: bold;
       position: relative;
       z-index: 2;
       perspective: 1000px;
+      width: 100%;
+      max-width: 800px;
+      margin: 1rem auto;
     }
 
     .bar {
-      width: 5px;
-      height: 100px;
+      width: 4px;
+      height: clamp(60px, 15vw, 100px);
       background-color: var(--text-color);
       transition: all 1s ease;
       box-shadow: 0 0 10px var(--shadow-color);
@@ -66,9 +74,11 @@
     .text-box {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: clamp(0.5rem, 3vw, 1.5rem);
       transition: all 1s ease;
-      padding: 0 1rem;
+      padding: 0 clamp(0.5rem, 3vw, 1rem);
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .letter {
@@ -79,7 +89,7 @@
 
     .heart {
       display: none;
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 10vw, 4rem);
       color: var(--accent-color);
       text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
       position: relative;
@@ -110,11 +120,11 @@
     }
 
     .surprise-btn {
-      margin-top: 3rem;
+      margin-top: 2rem;
       background: rgba(255, 255, 255, 0.9);
       color: var(--accent-color);
-      font-size: 1.5rem;
-      padding: 1rem 2.5rem;
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
+      padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 6vw, 2.5rem);
       border-radius: 50px;
       border: none;
       cursor: pointer;
@@ -263,8 +273,8 @@
     /* Floating balloons */
     .balloon {
       position: absolute;
-      width: 80px;
-      height: 100px;
+      width: clamp(40px, 15vw, 80px);
+      height: clamp(50px, 20vw, 100px);
       border-radius: 50%;
       background: var(--accent-color);
       opacity: 0.8;
@@ -275,10 +285,10 @@
     .balloon::before {
       content: "";
       position: absolute;
-      width: 5px;
-      height: 50px;
+      width: 3px;
+      height: clamp(30px, 10vw, 50px);
       background: #333;
-      bottom: -50px;
+      bottom: clamp(-30px, -10vw, -50px);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -301,26 +311,6 @@
       }
       100% {
         transform: translateY(-20vh) translateX(20px) scale(1);
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .container {
-        font-size: 2.5rem;
-      }
-      .text-box {
-        gap: 1rem;
-      }
-      .heart {
-        font-size: 3rem;
-      }
-      .surprise-btn {
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
       }
     }
   </style>
@@ -357,19 +347,19 @@
   <script>
     // Create floating hearts with different sizes and speeds
     const heartBg = document.querySelector('.heart-bg');
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) { // Reduced number for mobile performance
       const heart = document.createElement('span');
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = (5 + Math.random() * 10) + "s";
       heart.style.animationDelay = Math.random() * 5 + "s";
-      heart.style.width = (10 + Math.random() * 20) + "px";
+      heart.style.width = (10 + Math.random() * 15) + "px";
       heart.style.height = heart.style.width;
       heartBg.appendChild(heart);
     }
 
     // Create floating balloons
     const balloonsContainer = document.getElementById('balloonsContainer');
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) { // Reduced number for mobile
       const balloon = document.createElement('div');
       balloon.className = 'balloon';
       balloon.style.left = Math.random() * 90 + "vw";
@@ -380,27 +370,29 @@
 
     // Create glitter effects randomly
     function createGlitter() {
-      const glitter = document.createElement('div');
-      glitter.className = 'glitter';
-      glitter.style.left = Math.random() * 100 + "vw";
-      glitter.style.top = Math.random() * 100 + "vh";
-      glitter.style.animationDuration = (0.5 + Math.random() * 1.5) + "s";
-      glitter.style.width = (2 + Math.random() * 6) + "px";
-      glitter.style.height = glitter.style.width;
-      document.body.appendChild(glitter);
-      
-      // Remove glitter after animation completes
-      setTimeout(() => {
-        glitter.remove();
-      }, 2000);
+      if (window.innerWidth > 768) { // Only on larger screens for performance
+        const glitter = document.createElement('div');
+        glitter.className = 'glitter';
+        glitter.style.left = Math.random() * 100 + "vw";
+        glitter.style.top = Math.random() * 100 + "vh";
+        glitter.style.animationDuration = (0.5 + Math.random() * 1.5) + "s";
+        glitter.style.width = (2 + Math.random() * 4) + "px";
+        glitter.style.height = glitter.style.width;
+        document.body.appendChild(glitter);
+        
+        setTimeout(() => {
+          glitter.remove();
+        }, 2000);
+      }
     }
 
-    // Create glitter periodically
-    setInterval(createGlitter, 100);
+    // Create glitter periodically (less frequent on mobile)
+    setInterval(createGlitter, window.innerWidth > 768 ? 100 : 300);
 
     // Create confetti explosion
     function createConfetti() {
-      for (let i = 0; i < 100; i++) {
+      const confettiCount = window.innerWidth > 768 ? 100 : 50; // Less on mobile
+      for (let i = 0; i < confettiCount; i++) {
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
         confetti.style.left = Math.random() * 100 + "vw";
@@ -408,7 +400,6 @@
         confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
         document.body.appendChild(confetti);
         
-        // Remove confetti after animation completes
         setTimeout(() => {
           confetti.remove();
         }, 5000);
@@ -458,6 +449,20 @@
       const bgMusic = document.getElementById('bgMusic');
       bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
     }, { once: true });
+
+    // Adjust layout for very small screens
+    function adjustLayout() {
+      if (window.innerWidth < 400) {
+        document.getElementById("textBox").style.flexDirection = "column";
+        document.getElementById("textBox").style.alignItems = "center";
+      } else {
+        document.getElementById("textBox").style.flexDirection = "row";
+      }
+    }
+
+    // Run on load and resize
+    window.addEventListener('load', adjustLayout);
+    window.addEventListener('resize', adjustLayout);
   </script>
 
 </body>
