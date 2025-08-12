@@ -4,467 +4,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <title>Helena's Birthday Wish</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #ff6b8b;
-      --secondary-color: #ffcccb;
-      --accent-color: #ff4757;
-      --text-color: #fff;
-      --shadow-color: rgba(0, 0, 0, 0.2);
-    }
-    
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      text-align: center;
-      font-family: 'Dancing Script', cursive;
-      overflow: hidden;
-      position: relative;
+      font-family: 'Montserrat', sans-serif;
+      background:
+        url('candles-1835449_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       min-height: 100vh;
-      color: var(--text-color);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease-out;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     h1 {
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      margin-bottom: 1rem;
-      text-shadow: 3px 3px 5px var(--shadow-color);
-      animation: pulse 2s infinite alternate;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
-    }
-
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      font-weight: bold;
-      position: relative;
-      z-index: 2;
-      perspective: 1000px;
-      width: 100%;
-      max-width: 800px;
-      margin: 1rem auto;
-    }
-
-    .bar {
-      width: 4px;
-      height: clamp(60px, 15vw, 100px);
-      background-color: var(--text-color);
-      transition: all 1s ease;
-      box-shadow: 0 0 10px var(--shadow-color);
-    }
-
-    .text-box {
-      display: flex;
-      align-items: center;
-      gap: clamp(0.5rem, 3vw, 1.5rem);
-      transition: all 1s ease;
-      padding: 0 clamp(0.5rem, 3vw, 1rem);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .letter {
-      transition: all 0.6s ease;
-      text-shadow: 2px 2px 4px var(--shadow-color);
-      position: relative;
-    }
-
-    .heart {
-      display: none;
-      font-size: clamp(2.5rem, 10vw, 4rem);
-      color: var(--accent-color);
-      text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-      position: relative;
-      z-index: 3;
-    }
-
-    .heart-beat {
-      animation: heartbeat 1.5s ease infinite, bubble 1s ease forwards;
-    }
-
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.1); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes bubble {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .surprise-btn {
-      margin-top: 2rem;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--accent-color);
-      font-size: clamp(1.2rem, 5vw, 1.5rem);
-      padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 6vw, 2.5rem);
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      transform: scale(0);
-      transition: all 0.4s ease;
       font-family: 'Dancing Script', cursive;
-      z-index: 2;
-      box-shadow: 0 5px 15px var(--shadow-color);
-      position: relative;
-      overflow: hidden;
+      font-size: 3rem;
+      color: #d23669;
+      margin-bottom: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: textGlow 2s infinite alternate;
     }
 
-    .surprise-btn:hover {
-      transform: scale(1.05) !important;
-      box-shadow: 0 8px 20px var(--shadow-color);
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: #ff4757;
+      margin-top: 5px;
+      animation: bounce 2s infinite;
     }
 
-    .surprise-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transition: 0.5s;
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      margin: 25px 0;
+      animation: slideUp 1s ease-out;
     }
 
-    .surprise-btn:hover::before {
-      left: 100%;
-    }
-
-    .show-btn {
-      transform: scale(1) !important;
-    }
-
-    /* Floating hearts background */
-    .heart-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .heart-bg span {
-      position: absolute;
+    .btn {
+      background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 10px auto;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+      transition: all 0.3s ease;
       display: block;
-      width: 20px;
-      height: 20px;
-      background: var(--accent-color);
-      transform: rotate(45deg);
-      animation: floatHearts linear infinite;
-      opacity: 0.6;
+      width: 80%;
+      max-width: 250px;
+      text-decoration: none;
     }
 
-    .heart-bg span::before,
-    .heart-bg span::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: var(--accent-color);
-      border-radius: 50%;
+    .btn-celebrate {
+      animation: pulse 2s infinite;
     }
 
-    .heart-bg span::before {
-      top: -10px;
-      left: 0;
+    .btn-link {
+      display: none;
+      background: linear-gradient(to right, #6b66ff, #8e8eff);
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .heart-bg span::after {
-      left: -10px;
-      top: 0;
+    .btn-link.visible {
+      display: block;
+      transform: scale(1);
+      opacity: 1;
     }
 
-    @keyframes floatHearts {
-      0% {
-        transform: translateY(100vh) rotate(45deg) scale(0.5);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.6;
-      }
-      90% {
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg) scale(1.2);
-        opacity: 0;
-      }
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
     }
 
-    /* Confetti */
+    .btn-celebrate:hover {
+      background: linear-gradient(to right, #ff5252, #ff7676);
+    }
+
+    .btn-link:hover {
+      background: linear-gradient(to right, #5252ff, #7676ff);
+      box-shadow: 0 8px 20px rgba(107, 107, 255, 0.6);
+    }
+
     .confetti {
       position: absolute;
       width: 10px;
       height: 10px;
       background-color: #f00;
       opacity: 0;
-      z-index: 1;
-      animation: confettiFall 5s linear forwards;
     }
 
-    @keyframes confettiFall {
-      0% {
-        transform: translateY(-100px) rotate(0deg);
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
         opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Glitter effect */
-    .glitter {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background-color: gold;
-      border-radius: 50%;
-      opacity: 0;
-      z-index: 1;
-      animation: glitter 2s linear infinite;
-    }
-
-    @keyframes glitter {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-      50% {
         transform: scale(1);
-        opacity: 1;
       }
-      100% {
-        transform: scale(0.5);
+    }
+
+    @keyframes slideUp {
+      from {
         opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* Floating balloons */
-    .balloon {
-      position: absolute;
-      width: clamp(40px, 15vw, 80px);
-      height: clamp(50px, 20vw, 100px);
-      border-radius: 50%;
-      background: var(--accent-color);
-      opacity: 0.8;
-      z-index: 0;
-      animation: floatBalloon 15s linear infinite;
-    }
-
-    .balloon::before {
-      content: "";
-      position: absolute;
-      width: 3px;
-      height: clamp(30px, 10vw, 50px);
-      background: #333;
-      bottom: clamp(-30px, -10vw, -50px);
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .balloon:nth-child(2n) {
-      background: #ff9ff3;
-    }
-
-    .balloon:nth-child(3n) {
-      background: #feca57;
-    }
-
-    .balloon:nth-child(4n) {
-      background: #5f27cd;
-    }
-
-    @keyframes floatBalloon {
-      0% {
-        transform: translateY(100vh) translateX(0) scale(0.8);
+    @keyframes textGlow {
+      from {
+        text-shadow: 0 0 5px rgba(210, 54, 105, 0.5);
       }
+
+      to {
+        text-shadow: 0 0 15px rgba(210, 54, 105, 0.8);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
       100% {
-        transform: translateY(-20vh) translateX(20px) scale(1);
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 90%;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <h1 class="animate__animated animate__fadeIn">Happy Birthday My Love!</h1>
-
-  <!-- Floating elements background -->
-  <div class="heart-bg" id="heartBg"></div>
-  <div id="balloonsContainer"></div>
-
-  <div class="container" id="animationBox">
-    <div class="bar" id="leftBar"></div>
-
-    <div class="text-box" id="textBox">
-      <div class="letter animate__animated animate__fadeIn" id="i">I</div>
-      <div class="letter animate__animated animate__fadeIn" id="love">LOVE</div>
-      <div class="heart" id="heart">❤️</div>
-      <div class="letter animate__animated animate__fadeIn" id="you">YOU</div>
-    </div>
-
-    <div class="bar" id="rightBar"></div>
+  <div class="card">
+    <h1>Myy Panda's</h1>
+    <h2>Birthday</h2>
+    <p>I love you soo much my girl.This is nothing just a little surprise for you.</p>
+    <button class="btn btn-celebrate" id="celebrateBtn">Let's Celebrate!</button>
+    <a href="cake.html" class="btn btn-link" id="partyLinkBtn">Next→</a>
   </div>
 
-  <button class="surprise-btn" id="surpriseBtn" onclick="window.location.href='cake.html'">Click for Your Surprise 💝</button>
-
-  <audio autoplay loop id="bgMusic">
-    <source src="Indila - Love Story (Lyrics) - Pizza Music.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
   <script>
-    // Create floating hearts with different sizes and speeds
-    const heartBg = document.querySelector('.heart-bg');
-    for (let i = 0; i < 30; i++) { // Reduced number for mobile performance
-      const heart = document.createElement('span');
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (5 + Math.random() * 10) + "s";
-      heart.style.animationDelay = Math.random() * 5 + "s";
-      heart.style.width = (10 + Math.random() * 15) + "px";
-      heart.style.height = heart.style.width;
-      heartBg.appendChild(heart);
-    }
-
-    // Create floating balloons
-    const balloonsContainer = document.getElementById('balloonsContainer');
-    for (let i = 0; i < 6; i++) { // Reduced number for mobile
-      const balloon = document.createElement('div');
-      balloon.className = 'balloon';
-      balloon.style.left = Math.random() * 90 + "vw";
-      balloon.style.animationDuration = (10 + Math.random() * 20) + "s";
-      balloon.style.animationDelay = Math.random() * 10 + "s";
-      balloonsContainer.appendChild(balloon);
-    }
-
-    // Create glitter effects randomly
-    function createGlitter() {
-      if (window.innerWidth > 768) { // Only on larger screens for performance
-        const glitter = document.createElement('div');
-        glitter.className = 'glitter';
-        glitter.style.left = Math.random() * 100 + "vw";
-        glitter.style.top = Math.random() * 100 + "vh";
-        glitter.style.animationDuration = (0.5 + Math.random() * 1.5) + "s";
-        glitter.style.width = (2 + Math.random() * 4) + "px";
-        glitter.style.height = glitter.style.width;
-        document.body.appendChild(glitter);
-        
-        setTimeout(() => {
-          glitter.remove();
-        }, 2000);
+    document.getElementById('celebrateBtn').addEventListener('click', function () {
+      // Create confetti effect
+      for (let i = 0; i < 100; i++) {
+        createConfetti();
       }
-    }
 
-    // Create glitter periodically (less frequent on mobile)
-    setInterval(createGlitter, window.innerWidth > 768 ? 100 : 300);
+      // Button animation
+      this.textContent = 'Celebrating! 🎉';
+      this.style.animation = 'none';
+      this.offsetHeight; /* trigger reflow */
+      this.style.animation = 'pulse 0.5s infinite';
 
-    // Create confetti explosion
-    function createConfetti() {
-      const confettiCount = window.innerWidth > 768 ? 100 : 50; // Less on mobile
-      for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
-        document.body.appendChild(confetti);
-        
-        setTimeout(() => {
-          confetti.remove();
-        }, 5000);
-      }
-    }
-
-    // Animation sequence
-    // STEP 1: LOVE → ❤️ and squeeze bars in
-    setTimeout(() => {
-      document.getElementById("love").classList.add('animate__fadeOut');
+      // Show the party details button with popup effect
       setTimeout(() => {
-        document.getElementById("love").style.display = "none";
-        document.getElementById("heart").style.display = "inline-block";
-        document.getElementById("heart").classList.add('heart-beat');
-        document.getElementById("textBox").style.gap = "0.5rem";
-      }, 500);
-    }, 1500);
+        const partyBtn = document.getElementById('partyLinkBtn');
+        partyBtn.classList.add('visible');
 
-    // STEP 2: Shrink + hide "YOU" with animation
-    setTimeout(() => {
-      const you = document.getElementById("you");
-      you.classList.add('animate__fadeOut', 'animate__zoomOut');
-    }, 3000);
+        // Play a subtle sound (optional)
+        const popSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
+        popSound.volume = 0.3;
+        popSound.play();
 
-    setTimeout(() => {
-      document.getElementById("you").style.display = "none";
-    }, 4000);
-
-    // STEP 3: Fade out "I" with animation
-    setTimeout(() => {
-      document.getElementById("i").classList.add('animate__fadeOut');
-    }, 4500);
-
-    // STEP 4: Show surprise button with animation
-    setTimeout(() => {
-      document.getElementById("surpriseBtn").classList.add("show-btn", "animate__pulse");
-      createConfetti();
-    }, 6000);
-
-    // Add click effect to button
-    document.getElementById('surpriseBtn').addEventListener('click', function() {
-      createConfetti();
+        this.textContent = 'Let\'s Celebrate!';
+        this.style.animation = 'pulse 2s infinite';
+      }, 2000);
     });
 
-    // Play music on interaction (to comply with autoplay policies)
-    document.body.addEventListener('click', function() {
-      const bgMusic = document.getElementById('bgMusic');
-      bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
-    }, { once: true });
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#ff8e8e', '#ffb8b8', '#ffdd59', '#ff9f43', '#f368e0', '#5f27cd'];
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = -10 + 'px';
+      confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+      confetti.style.width = Math.random() * 10 + 5 + 'px';
+      confetti.style.height = Math.random() * 10 + 5 + 'px';
 
-    // Adjust layout for very small screens
-    function adjustLayout() {
-      if (window.innerWidth < 400) {
-        document.getElementById("textBox").style.flexDirection = "column";
-        document.getElementById("textBox").style.alignItems = "center";
-      } else {
-        document.getElementById("textBox").style.flexDirection = "row";
-      }
+      document.body.appendChild(confetti);
+
+      let animationDuration = Math.random() * 3 + 2;
+
+      confetti.style.animation = `fall ${animationDuration}s linear forwards`;
+
+      // Add animation keyframes dynamically
+      const style = document.createElement('style');
+      style.innerHTML = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 1;
+                    }
+                }
+            `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        confetti.remove();
+        style.remove();
+      }, animationDuration * 1000);
     }
-
-    // Run on load and resize
-    window.addEventListener('load', adjustLayout);
-    window.addEventListener('resize', adjustLayout);
   </script>
-
 </body>
 
 </html>
