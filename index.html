@@ -15,6 +15,23 @@
     }
 
     h1 {
+      color: white;<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise for My Birthday Girl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffcccb;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
       color: white;
       font-size: 48px;
       margin-top: 80px;
@@ -213,3 +230,201 @@
 
 
 </html>
+      font-size: 48px;
+      margin-top: 80px;
+    }
+
+    .container {
+      margin-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      font-weight: bold;
+      color: purple;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bar {
+      width: 4px;
+      height: 80px;
+      background-color: white;
+      transition: all 1s ease;
+    }
+
+    .text-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: gap 1s ease;
+    }
+
+    .letter {
+      transition: all 0.6s ease;
+    }
+
+    .heart {
+      display: none;
+      font-size: 60px;
+      animation: bubble 1s ease forwards;
+      color: red;
+    }
+
+    @keyframes bubble {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+    }
+
+    .surprise-btn {
+      margin-top: 80px;
+      background: white;
+      color: hotpink;
+      font-size: 22px;
+      padding: 15px 35px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transform: scale(0);
+      transition: transform 0.4s ease;
+      font-family: 'Dancing Script', cursive;
+      z-index: 2;
+    }
+
+    .show-btn {
+      transform: scale(1);
+    }
+
+    /* Floating hearts background */
+    .heart-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .heart-bg span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+    }
+
+    .heart-bg span::before,
+    .heart-bg span::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart-bg span::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart-bg span::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Surprise for My Birthday Girl</h1>
+
+  <!-- Floating hearts background -->
+  <div class="heart-bg"></div>
+
+  <div class="container" id="animationBox">
+    <div class="bar" id="leftBar"></div>
+
+    <div class="text-box" id="textBox">
+      <div class="letter" id="i">I</div>
+      <div class="letter" id="love">LOVE</div>
+      <div class="heart" id="heart">❤️</div>
+      <div class="letter" id="you">YOU</div>
+    </div>
+
+    <div class="bar" id="rightBar"></div>
+  </div>
+
+  <button class="surprise-btn" id="surpriseBtn" onclick="window.location.href='cake.html'">A Surprise Awaits 💖</button>
+
+  <audio autoplay loop>
+    <source src="Indila - Love Story (Lyrics) - Pizza Music.mp3" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Create floating hearts
+    const heartBg = document.querySelector('.heart-bg');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('span');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heartBg.appendChild(heart);
+    }
+
+    // STEP 1: LOVE → ❤️ and squeeze bars in
+    setTimeout(() => {
+      document.getElementById("love").style.display = "none";
+      document.getElementById("heart").style.display = "inline-block";
+      document.getElementById("textBox").style.gap = "10px"; // reduce space
+    }, 1500);
+
+    // STEP 2: Shrink + hide "YOU"
+    setTimeout(() => {
+      const you = document.getElementById("you");
+      you.style.transform = "scale(0)";
+      you.style.opacity = "0";
+    }, 3000);
+
+    setTimeout(() => {
+      document.getElementById("you").style.display = "none";
+    }, 4000);
+
+    // STEP 3: Fade out "I"
+    setTimeout(() => {
+      document.getElementById("i").style.opacity = 0;
+    }, 4500);
+
+    // STEP 4: Show surprise button
+    setTimeout(() => {
+      document.getElementById("surpriseBtn").classList.add("show-btn");
+    }, 6000);
+  </script>
+
+</body>
+
+
+</html>
+
